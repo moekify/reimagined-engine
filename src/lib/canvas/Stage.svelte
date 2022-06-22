@@ -1,10 +1,10 @@
 <script>
 	import { onMount } from 'svelte';
-	import { interactable, resizeCanvases } from '$lib/_interact.js';
-	import position from '$lib/_position.js';
+	import { interactable, resizeCanvases } from '$lib/_interact';
+	import position from '$lib/_position';
 
 	onMount(() => {
-		const elements = [...document.querySelectorAll('.draggable')];
+		const elements = Array.from(document.querySelectorAll('.draggable'));
 		if (elements) {
 			for (const el of elements) {
 				position(el).then(() => {
@@ -16,7 +16,7 @@
 	});
 
 	const resetCanvas = (event) => {
-		let context = event.target.getContext('2d');
+		const context = event.target.getContext('2d');
 		context.clearRect(0, 0, context.canvas.width, context.canvas.height);
 		resizeCanvases();
 	};

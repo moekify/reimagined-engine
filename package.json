@@ -11,11 +11,6 @@
 		"format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. ."
 	},
 	"devDependencies": {
-		"@interactjs/actions": "^1.10.11",
-		"@interactjs/auto-start": "^1.10.11",
-		"@interactjs/dev-tools": "^1.10.11",
-		"@interactjs/interact": "^1.10.11",
-		"@interactjs/modifiers": "^1.10.11",
 		"@sveltejs/adapter-static": "^1.0.0-next.21",
 		"@sveltejs/kit": "next",
 		"@tailwindcss/typography": "^0.5.2",
@@ -26,6 +21,7 @@
 		"eslint": "^8.18.0",
 		"eslint-config-prettier": "^8.3.0",
 		"eslint-plugin-svelte3": "^4.0.0",
+		"interactjs": "^1.10.14",
 		"postcss": "^8.3.9",
 		"postcss-load-config": "^4.0.1",
 		"prettier": "^2.4.1",

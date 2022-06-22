@@ -1,11 +1,6 @@
-import '@interactjs/auto-start';
-import '@interactjs/actions/drag';
-import '@interactjs/actions/resize';
-import '@interactjs/modifiers';
-import '@interactjs/dev-tools';
-import interact from '@interactjs/interact';
+import interact from 'interactjs';
 
-let pixelSize = 16;
+const pixelSize = 16;
 
 export const interactable = () => {
 	interact('.draggable')
@@ -26,9 +21,9 @@ export const interactable = () => {
 
 			listeners: {
 				move(event) {
-					var target = event.target;
-					var x = parseFloat(target.getAttribute('data-x')) || 0;
-					var y = parseFloat(target.getAttribute('data-y')) || 0;
+					const target = event.target;
+					let x = parseFloat(target.getAttribute('data-x')) || 0;
+					let y = parseFloat(target.getAttribute('data-y')) || 0;
 
 					// update the element's style
 					target.style.width = event.rect.width + 'px';
@@ -73,9 +68,9 @@ export const interactable = () => {
 			listeners: {
 				// draw colored squares on move
 				move: function (event) {
-					let context = event.target.getContext('2d');
+					const context = event.target.getContext('2d');
 					// calculate the angle of the drag direction
-					let dragAngle = (180 * Math.atan2(event.dx, event.dy)) / Math.PI;
+					const dragAngle = (180 * Math.atan2(event.dx, event.dy)) / Math.PI;
 
 					// set color based on drag angle and speed
 					context.fillStyle =
@@ -93,7 +88,7 @@ export const interactable = () => {
 		})
 		// clear the canvas on doubletap
 		.on('doubletap', function (event) {
-			let context = event.target.getContext('2d');
+			const context = event.target.getContext('2d');
 
 			context.clearRect(0, 0, context.canvas.width, context.canvas.height);
 			resizeCanvases();
@@ -103,21 +98,21 @@ export const interactable = () => {
 };
 
 export const resizeCanvases = () => {
-	let canvas = document.querySelector('.rainbow-pixel-canvas');
+	const canvas = document.querySelector('.rainbow-pixel-canvas') as HTMLCanvasElement;
 	delete canvas.width;
 	delete canvas.height;
 
-	let rect = canvas.getBoundingClientRect();
+	const rect = canvas.getBoundingClientRect();
 
 	canvas.width = rect.width;
 	canvas.height = rect.height;
 };
 
 function dragMoveListener(event) {
-	var target = event.target;
+	const target = event.target;
 	// keep the dragged position in the data-x/data-y attributes
-	var x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx;
-	var y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
+	const x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx;
+	const y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
 
 	// translate the element
 	target.style.transform = 'translate(' + x + 'px, ' + y + 'px)';
