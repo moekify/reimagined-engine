@@ -12,15 +12,17 @@
 	<Item width="w-96" classes="bg-white" dataX="60" dataY="73">
 		<h2 class="font-regular text-4xl pb-2">Who is Mirko</h2>
 		<p>Entrepreneur, Software Developer, Product Manager, Human</p>
-		<a href="mailto:mirko+website@nitschke.me" sveltekit:prefetch
+		<a href="mailto:mirko+website@nitschke.me" data-sveltekit-preload-data
 			><p class="text-lg hover:underline">Reach out to Mirko?!</p></a
 		>
 	</Item>
 	<Item width="w-1/5" classes="bg-white" dataX="45" dataY="7"
 		><h2 class="font-regular text-4xl pb-2">What is Mirko?</h2>
 		<ul class="prose">
-			<li><a href="https://www.love-foundation.org" sveltekit:prefetch>Love Foundation</a></li>
-			<li><a href="https://music.hugrecords.world" sveltekit:prefetch>Hug Records</a></li>
+			<li>
+				<a href="https://www.love-foundation.org" data-sveltekit-preload-data>Love Foundation</a>
+			</li>
+			<li><a href="https://music.hugrecords.world" data-sveltekit-preload-data>Hug Records</a></li>
 		</ul>
 	</Item>
 	<Item width="w-1/5" classes="bg-white" dataX="5" dataY="5">
